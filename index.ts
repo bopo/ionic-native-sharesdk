@@ -6,12 +6,12 @@ export interface ShareInitOptions {
   /**
    * 从Mob开发者后台中得到的Appkey
    */
-  appKey: string;
+  appkey: string;
 
   /**
    * 从Mob开发者后台中得到的AppSecret
    */
-  appSecret: string;
+  secret: string;
 }
 
 export interface ShareOptions {
@@ -56,12 +56,12 @@ export interface ShareOptions {
  * @description
  * 该插件使用ShareSDK作为分享插件，使用版本为ShareSDK For Android v3.1.0，ShareSDK For iOS v4.0.2，目前支持微信、腾讯QQ、新浪微博、邮件、短信 
  *
- * Requires Cordova plugin: `cordova-plugin-sharesdk`. For more info, please see the [ShareSDK plugin docs](https://github.com/kuaimacode/cordova-plugin-sharesdk).
+ * Requires Cordova plugin: `cordova-plugin-sharesdk`. For more info, please see the [ShareSDK plugin docs](https://github.com/bopo/cordova-plugin-sharesdk).
  *
  *
  * 1、安装
- * ionic cordova plugin add https://github.com/kuaimacode/cordova-plugin-sharesdk.git
- * npm install git+https://github.com/kuaimacode/ionic-native-sharesdk.git
+ * ionic cordova plugin add https://github.com/bopo/cordova-plugin-sharesdk.git
+ * npm install git+https://github.com/bopo/ionic-native-sharesdk.git
  *
  *
  * 2、配置参数
@@ -106,8 +106,8 @@ export interface ShareOptions {
   pluginName: 'ShareSDK',
   plugin: 'cordova-plugin-sharesdk',
   pluginRef: 'ShareSDKPlugin',
-  repo: 'https://github.com/kuaimacode/cordova-plugin-sharesdk',
-  install: 'ionic cordova plugin add https://github.com/kuaimacode/cordova-plugin-sharesdk.git',
+  repo: 'https://github.com/bopo/cordova-plugin-sharesdk',
+  install: 'ionic cordova plugin add https://github.com/bopo/cordova-plugin-sharesdk.git',
   platforms: ['Android', 'iOS']
 })
 @Injectable()
@@ -115,12 +115,11 @@ export class ShareSDK extends IonicNativePlugin {
 
   /**
    * 打开分享界面
-   * @param params { ShareOptions } sharesdk options
+   * @param params { ShareInitOptions } sharesdk options
    * @returns {Promise<any>} Returns a Promise that resolves with the success return, or rejects with an error.
    */
   @Cordova()
-  init(params: ShareOptions): Promise<any> { return; }
-
+  setup(params: ShareInitOptions): Promise<any> { return; }
 
   /**
    * 打开分享界面
